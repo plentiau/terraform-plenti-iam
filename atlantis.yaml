@@ -3,7 +3,21 @@ automerge: true
 delete_source_branch_on_merge: true
 projects:
   - dir: legacy-production/platform-ops-automation
-    name: platform-ops-automation
+    name: platform-ops-automation-legacy-production
+    apply_requirements: [mergeable, approved]
+    terraform_version: v1.9.5
+    autoplan:
+      enabled: true
+      when_modified: ["**/*.tf", "*.hcl"]
+  - dir: plentiau-test/platform-ops-automation
+    name: platform-ops-automation-plentiau-test
+    apply_requirements: [mergeable, approved]
+    terraform_version: v1.9.5
+    autoplan:
+      enabled: true
+      when_modified: ["**/*.tf", "*.hcl"]
+  - dir: plentiau-production/platform-ops-automation
+    name: platform-ops-automation-plentiau-production
     apply_requirements: [mergeable, approved]
     terraform_version: v1.9.5
     autoplan:
