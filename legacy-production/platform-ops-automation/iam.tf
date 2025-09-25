@@ -1,6 +1,6 @@
 module "pipeline_tls_automation_role" {
   source  = "app.terraform.io/plentiau/iam-role-wizard/aws"
-  version = "2.5.0"
+  version = "2.6.1"
 
   name               = "pipeline-tls-automation-role"
   oidc_provider_arn  = "arn:aws:iam::519527725796:oidc-provider/token.actions.githubusercontent.com"
