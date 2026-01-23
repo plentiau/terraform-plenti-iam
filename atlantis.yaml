@@ -26,3 +26,9 @@ projects:
     autoplan:
       enabled: true
       when_modified: ["**/*.tf", "*.hcl"]
+  - dir: legacy-production/ProductionMonitor
+    name: ProductionMonitor-legacy-production
+    apply_requirements: [mergeable, approved]
+    autoplan:
+      enabled: true
+      when_modified: ["**/*.tf", "*.hcl"]
