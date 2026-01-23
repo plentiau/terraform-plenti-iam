@@ -8,6 +8,12 @@ module "pipeline_production_monitor_role" {
   allow_get_ssm_parameter_arns = [
     "arn:aws:ssm:ap-southeast-2:519527725796:parameter/platform-monitor/*"
   ]
+  allow_pull_docker_images_from_ecr = [
+    "arn:aws:ecr:ap-southeast-2:519527725796:repository/cypress/*",
+    "arn:aws:ecr:ap-southeast-2:519527725796:repository/node/*",
+    "arn:aws:ecr:ap-southeast-2:519527725796:repository/node-window/*",
+    "arn:aws:ecr:ap-southeast-2:519527725796:repository/slack-notifier"
+  ]
 }
 
 output "pipeline_production_monitor_role_arn" {
@@ -23,6 +29,12 @@ module "pipeline_uat_monitor_role" {
   github_repo_names = ["ProductionMonitor:*"]
   allow_get_ssm_parameter_arns = [
     "arn:aws:ssm:ap-southeast-2:519527725796:parameter/uat-monitor/*"
+  ]
+  allow_pull_docker_images_from_ecr = [
+    "arn:aws:ecr:ap-southeast-2:519527725796:repository/cypress/*",
+    "arn:aws:ecr:ap-southeast-2:519527725796:repository/node/*",
+    "arn:aws:ecr:ap-southeast-2:519527725796:repository/node-window/*",
+    "arn:aws:ecr:ap-southeast-2:519527725796:repository/slack-notifier"
   ]
 }
 
