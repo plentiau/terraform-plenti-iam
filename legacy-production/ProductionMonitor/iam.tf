@@ -14,6 +14,9 @@ module "pipeline_production_monitor_role" {
     "arn:aws:ecr:ap-southeast-2:519527725796:repository/node-window/*",
     "arn:aws:ecr:ap-southeast-2:519527725796:repository/slack-notifier"
   ]
+  allow_decrypt_key_arns = [
+    "arn:aws:kms:ap-southeast-2:519527725796:key/e075267e-eebf-433f-88e5-c96a89c9de03"
+  ]
 }
 
 output "pipeline_production_monitor_role_arn" {
