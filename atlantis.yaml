@@ -32,3 +32,9 @@ projects:
     autoplan:
       enabled: true
       when_modified: ["**/*.tf", "*.hcl"]
+  - dir: legacy-production/ServiceConfiguration
+    name: ServiceConfiguration-legacy-production
+    apply_requirements: [mergeable, approved]
+    autoplan:
+      enabled: true
+      when_modified: ["**/*.tf", "*.hcl"]
