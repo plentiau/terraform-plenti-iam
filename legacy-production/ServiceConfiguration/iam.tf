@@ -8,6 +8,9 @@ module "pipeline_service_configuration_role" {
   allow_get_ssm_parameter_arns = [
     "arn:aws:ssm:ap-southeast-2:519527725796:parameter/deployment/*"
   ]
+  allow_decrypt_key_arns = [
+    "arn:aws:kms:ap-southeast-2:519527725796:key/e075267e-eebf-433f-88e5-c96a89c9de03"
+  ]
 }
 
 output "pipeline_service_configuration_role_arn" {
