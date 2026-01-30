@@ -26,6 +26,9 @@ module "pipeline_regular_uat_monitor_role" {
     "arn:aws:ssm:ap-southeast-2:519527725796:parameter/password_dbscripts_uat",
     "arn:aws:ssm:ap-southeast-2:519527725796:parameter/devops/*"
   ]
+  allow_decrypt_key_arns = [
+    "arn:aws:kms:ap-southeast-2:519527725796:key/e075267e-eebf-433f-88e5-c96a89c9de03"
+  ]
 }
 
 output "pipeline_regular_uat_monitor_role_arn" {
@@ -43,6 +46,9 @@ module "pipeline_regular_prod_monitor_role" {
     "arn:aws:ssm:ap-southeast-2:519527725796:parameter/password_production_monitor",
     "arn:aws:ssm:ap-southeast-2:519527725796:parameter/aurora_password_dbreadonly",
     "arn:aws:ssm:ap-southeast-2:519527725796:parameter/devops/*"
+  ]
+  allow_decrypt_key_arns = [
+    "arn:aws:kms:ap-southeast-2:519527725796:key/e075267e-eebf-433f-88e5-c96a89c9de03"
   ]
 }
 
