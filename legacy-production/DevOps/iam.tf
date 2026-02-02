@@ -50,6 +50,9 @@ module "pipeline_regular_prod_monitor_role" {
   allow_decrypt_key_arns = [
     "arn:aws:kms:ap-southeast-2:519527725796:key/e075267e-eebf-433f-88e5-c96a89c9de03"
   ]
+  allow_read_s3_objects_arns = [
+    "arn:aws:s3:::alert-configuration/*"
+  ]
 }
 
 output "pipeline_regular_prod_monitor_role_arn" {
