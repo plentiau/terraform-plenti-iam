@@ -54,7 +54,8 @@ resource "aws_iam_role_policy" "venus_build_termination_ec2" {
         Resource = "arn:aws:ec2:ap-southeast-2:${local.legacy_production_account_id}:instance/*"
         Condition = {
           StringEquals = {
-            "ec2:ResourceTag/Role" = "WebServer"
+            "ec2:ResourceTag/Role"        = "WebServer"
+            "ec2:ResourceTag/Application" = "Venus"
           }
         }
       },
