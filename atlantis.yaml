@@ -56,3 +56,9 @@ projects:
     autoplan:
       enabled: true
       when_modified: ["**/*.tf", "*.hcl"]
+  - dir: legacy-production/venus-database-maintenance-stored-procs
+    name: venus-database-maintenance-stored-procs-legacy-production
+    apply_requirements: [mergeable, approved]
+    autoplan:
+      enabled: true
+      when_modified: ["**/*.tf", "*.hcl"]
